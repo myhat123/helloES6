@@ -1,0 +1,16 @@
+{
+    "presets": [
+      [
+        "@babel/env",
+        {
+          "targets": {
+            "chrome": "80",
+          },
+          "useBuiltIns": "usage",
+          "corejs": 2,
+        }
+      ]
+    ],
+
+    "plugins": ["@babel/plugin-transform-react-jsx"]
+  }
