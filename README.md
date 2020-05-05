@@ -1,3 +1,10 @@
+前端工程化学习
+============
+
+https://www.jianshu.com/p/88ed70476adb
+
+目标是react 16，模块化、组件化、规范化、自动化
+
 hello_01  js模块新特性  
 hello_02  babel  
 hello_03  react脚手架  
