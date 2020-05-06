@@ -1,9 +1,17 @@
 前端工程化学习
 ============
 
+参考资料：
+
+目标是react 16，模块化、组件化、规范化、自动化  
 https://www.jianshu.com/p/88ed70476adb
 
-目标是react 16，模块化、组件化、规范化、自动化
+阮一峰的教程  
+https://github.com/ruanyf/react-demos  
+http://www.ruanyifeng.com/blog/2019/09/react-hooks.html
+
+我们学习的次序  
+主体部分从hello_07开始，https://react.docschina.org/docs/hello-world.html
 
 hello_01  js模块新特性  
 hello_02  babel  
@@ -16,3 +24,4 @@ hello_08  react元素渲染
 hello_09  react组件  
 hello_10  state状态更新  
 hello_11  事件处理  
+hello_12  条件渲染
