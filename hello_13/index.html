@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    //示例1
+    // const numbers = [1, 2, 3, 4, 5];
+    // const doubled = numbers.map((number) => number * 2);
+    // console.log(doubled);
+
+    //示例2 组件成列表
+    // const numbers = [1, 2, 3, 4, 5];
+    // const listItems = numbers.map((number) =>
+    //   <li>{number}</li>
+    // );
+
+    // ReactDOM.render(
+    //   <ul>{listItems}</ul>,
+    //   document.getElementById('root')
+    // );
+
+    //示例3 重构成一个组件
+    // function NumberList(props) {
+    //   const numbers = props.numbers;
+    //   const listItems = numbers.map((number) =>
+    //     <li>{number}</li>
+    //   );
+    //   return (
+    //     <ul>{listItems}</ul>
+    //   );
+    // }
+
+    // const numbers = [1, 2, 3, 4, 5];
+    // ReactDOM.render(
+    //   <NumberList numbers={numbers} />,
+    //   document.getElementById('root')
+    // );
+
+    //示例4, 先解决key问题，不让报错
+    // function NumberList(props) {
+    //   const numbers = props.numbers;
+    //   const listItems = numbers.map((number) =>
+    //     <li key={number.toString()}>{number}</li>
+    //   );
+    //   return (
+    //     <ul>{listItems}</ul>
+    //   );
+    // }
+
+    // const numbers = [1, 2, 3, 4, 5];
+    // ReactDOM.render(
+    //   <NumberList numbers={numbers} />,
+    //   document.getElementById('root')
+    // );
+
+    //示例5 正确使用key
+    // function ListItem(props) {
+    //   // 正确！这里不需要指定 key：
+    //   return <li>{props.value}</li>;
+    // }
+
+    // function NumberList(props) {
+    //   const numbers = props.numbers;
+    //   const listItems = numbers.map((number) =>
+    //     // 正确！key 应该在数组的上下文中被指定
+    //     <ListItem key={number.toString()} value={number} />
+
+    //   );
+    //   return (
+    //     <ul>
+    //       {listItems}
+    //     </ul>
+    //   );
+    // }
+
+    // const numbers = [1, 2, 3, 4, 5];
+    // ReactDOM.render(
+    //   <NumberList numbers={numbers} />,
+    //   document.getElementById('root')
+    // );
+
+    //示例6
+    function Blog(props) {
+      const sidebar = (
+        <ul>
+          {props.posts.map((post) =>
+            <li key={post.id}>
+              {post.title}
+            </li>
+          )}
+        </ul>
+      );
+      const content = props.posts.map((post) =>
+        <div key={post.id}>
+          <h3>{post.title}</h3>
+          <p>{post.content}</p>
+        </div>
+      );
+      return (
+        <div>
+          {sidebar}
+          <hr />
+          {content}
+        </div>
+      );
+    }
+
+    const posts = [
+      { id: 1, title: 'Hello World', content: 'Welcome to learning React!' },
+      { id: 2, title: 'Installation', content: 'You can install React from npm.' }
+    ];
+    ReactDOM.render(
+      <Blog posts={posts} />,
+      document.getElementById('root')
+    );
+  </script>
+</body>
+
+</html>
