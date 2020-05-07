@@ -14,6 +14,9 @@ if (isLoggedIn) {
 为了简化，采用网页方式来使用react。  
 https://react.docschina.org/docs/add-react-to-a-website.html
 
+使用 babel-standalone  
+https://babel.docschina.org/setup#installation
+
 ```html
 <!DOCTYPE html>
 <html>
